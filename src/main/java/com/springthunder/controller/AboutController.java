@@ -15,6 +15,6 @@ public class AboutController {
     @RequestMapping("/")
     @ResponseBody
     public String helloWorld() {
-        return "About SPRING THUNDER...";
+        return "About OAUTH2 SPRING THUNDER...";
     }
 }
