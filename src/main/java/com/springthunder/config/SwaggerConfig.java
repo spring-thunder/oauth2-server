@@ -4,7 +4,6 @@
  */
 package com.springthunder.config;
 
-
 import com.mangofactory.swagger.configuration.SpringSwaggerConfig;
 import com.mangofactory.swagger.models.dto.ApiInfo;
 import com.mangofactory.swagger.plugin.*;
@@ -14,15 +13,16 @@ import org.springframework.context.annotation.*;
 
 @Configuration
 @EnableSwagger
-@EnableAutoConfiguration
 public class SwaggerConfig {
     private SpringSwaggerConfig springSwaggerConfig;
     @Autowired
     public void setSpringSwaggerConfig(SpringSwaggerConfig springSwaggerConfig) {
         this.springSwaggerConfig = springSwaggerConfig;
     }
+
     @Bean
     public SwaggerSpringMvcPlugin customImplementation() {
+
         return new SwaggerSpringMvcPlugin(this.springSwaggerConfig)
         //This info will be used in Swagger. See realisation of ApiInfo for more details.
                 .apiInfo(new ApiInfo(

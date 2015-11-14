@@ -13,15 +13,6 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 @SpringBootApplication
 public class App {
 
-    @Autowired
-    public void init(AuthenticationManagerBuilder auth) throws Exception {
-        auth.
-                inMemoryAuthentication()
-                .withUser("admin")
-                .password("admin").roles("USER");
-
-    }
-
     public static void main(String[] args) throws Exception {
         SpringApplication.run(App.class, args);
     }

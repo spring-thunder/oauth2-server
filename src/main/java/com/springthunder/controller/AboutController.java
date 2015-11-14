@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class AboutController {
 
-    @RequestMapping("/")
+    @RequestMapping("/about")
     @ResponseBody
     public String helloWorld() {
         return "About OAUTH2 SPRING THUNDER...";

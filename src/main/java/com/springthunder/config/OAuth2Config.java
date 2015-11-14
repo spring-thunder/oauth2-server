@@ -4,9 +4,11 @@
  */
 package com.springthunder.config;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
@@ -31,13 +33,14 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
         clients.inMemory()
                 .withClient("client")
                 .secret("secret")
-                /** Two grant types are handled:
-                 * - password: It requires user management creation beforehand
-                 * - client_credentials : It just requires client credentials
-                 */
-                .authorizedGrantTypes("password", "client_credentials")
+                        /** Two grant types are handled:
+                         * - password: It requires user management creation beforehand
+                         * - client_credentials : It just requires client credentials
+                         */
+                .authorizedGrantTypes("password","client_credentials")
                 .scopes("read", "trust")
                 .authorities("ROLE_CLIENT");  //AUTHORITIES GRANTED
 
     }
+
 }
