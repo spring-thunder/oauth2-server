@@ -1,0 +1,56 @@
+{
+  "swagger":"2.1.1",
+  "info":{
+    "version":"v1",
+    "title":"OAuth2.0 Server API",
+    "description":"A sample API that provides an OAuth2.0 server, able to serve different grant type tokens (client_credentials and password).",
+    "termsOfService":"https://creativecommons.org/publicdomain/zero/1.0/",
+    "license":{
+      "name":"License CC0 1.0 Universal 2015"
+    }
+  },
+  "host":"",
+  "basePath":"/",
+  "paths":{
+    "/oauth/token":{
+      "post":{
+        "tags": [
+          "Token Provider"
+        ],
+        "summary": "Providing API that allows to get a valid token",
+        "operationId": "getTokenUsingGET",
+        "description":"Returns a valid token.",
+        "consumes":[
+          "application/x-www-form-urlencoded"
+        ],
+        "produces":[
+          "application/json"
+        ],
+        "parameters":[
+          {
+            "name":"grant_type",
+            "in":"formData",
+            "description":"token grant type",
+            "required":true,
+            "type": "string"
+          },
+          {
+            "name":"Authorization",
+            "in":"header",
+            "description":"Authorization credentials",
+            "required":true,
+            "type": "string"
+          }
+        ],
+        "responses":{
+          "200":{
+            "description":"token response"
+          },
+          "401":{
+            "description":"Unauthorized"
+          }
+        }
+      }
+    }
+  }
+}

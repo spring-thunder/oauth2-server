@@ -14,7 +14,14 @@ public class AboutController {
 
     @RequestMapping("/about")
     @ResponseBody
-    public String helloWorld() {
+    public String about() {
         return "About OAUTH2 SPRING THUNDER...";
     }
+
+    @RequestMapping("/api")
+    public String api() {
+
+        return "redirect:swagger/index.html";
+    }
+
 }
