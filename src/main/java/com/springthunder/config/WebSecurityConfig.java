@@ -29,9 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers("/about")
-                .antMatchers("/api-docs")
-                .antMatchers("/swagger/**"); // #3
+                .antMatchers("/about", "/api","/api-docs.json", "/swagger/**" ); // #3
     }
 
 }
